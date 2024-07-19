@@ -1,0 +1,21 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.favourites {
+  width: 40px;
+  height: 40px;
+  border-style: none;
+  background-color: $white-color;
+  border: 1px solid $icons-color;
+  border-radius: 48px;
+  cursor: pointer;
+  line-height: 0;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &Img {
+    margin: 0 auto;
+  }
+}

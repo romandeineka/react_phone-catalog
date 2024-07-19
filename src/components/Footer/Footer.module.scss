@@ -1,0 +1,78 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.footer {
+  @include contentPaddingInline;
+
+  height: 96px;
+  background-color: $white-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onMobile {
+    flex-direction: column;
+    height: 257px;
+    align-items: flex-start;
+    padding-block: 32px;
+    box-sizing: border-box;
+  }
+
+  &Links {
+    display: flex;
+    justify-content: space-between;
+    gap: 107px;
+
+    @include onTablet {
+      gap: 13px;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &Item {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 11px;
+      letter-spacing: 0.04em;
+      color: $secondary-color;
+      
+    }
+  }
+
+  &ToTopContainer {
+    @include onMobile {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+
+  &ToTop {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &Text {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.34px;
+    color: $secondary-color;
+  }
+
+  &Button {
+    border-radius: 48px;
+    border: 1px solid $icons-color;
+    background-color: $white-color;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,84 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.cardItem {
+  height: 128px;
+  border: 1px solid $elements-color;
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white-color;
+
+  @include onMobile {
+    height: 160px;
+    padding: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &WrapTop {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include onMobile {
+      gap: 16px;
+    }
+  }
+
+  &WrapBottom {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include onMobile {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &Close {
+    padding: 0;
+    border-style: none;
+    background-color: $white-color;
+    cursor: pointer;
+  }
+
+  &Img {
+    width: 80px;
+    height: 80px;
+  }
+
+  &Title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  &Quantity {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+  }
+
+  &Button {
+    border-style: none;
+    background-color: $white-color;
+    cursor: pointer;
+    border: 1px solid $icons-color;
+    border-radius: 48px;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+  }
+
+  &Price {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 30.8px;
+  }
+}

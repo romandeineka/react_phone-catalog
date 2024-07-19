@@ -1,0 +1,24 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.toHome {
+  @include contentPaddingInline;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-block: 88px 40px;
+
+  @include onMobile {
+    margin-block: 72px 24px;
+  }
+}
+
+.title {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 15.34px;
+  color: $secondary-color;
+  text-decoration: none;
+}

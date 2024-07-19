@@ -1,0 +1,147 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.header {
+  height: 64px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-color: $white-color;
+  border-bottom: 1px solid $elements-color;
+  background-color: $white-color;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    height: 48px;
+  }
+
+  &Logo {
+    padding: 18px 24px;
+
+    @include onTablet {
+      padding: 13px 16px;
+    }
+
+    &Img {
+      @include onTablet {
+        width: 64px;
+        height: 22px;
+      }
+    }
+  }
+
+  &Left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include onTablet {
+      gap: 16px;
+    }
+  }
+
+  &Nav {
+    @include onMobile {
+      display: none;
+    }
+
+    &List {
+      padding: 0;
+      display: flex;
+      gap: 64px;
+
+      @include onTablet {
+        gap: 32px;
+      }
+    }
+    &Item {
+      list-style: none;
+      position: relative;
+    }
+    &Link {
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      color: $secondary-color;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &Active {
+        border-bottom: 3px solid $primary-color;
+        padding-bottom: 20px;
+        color: $primary-color;
+
+        @include onTablet {
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  &Right {
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &Icon {
+    
+    padding: 24px;
+    border-left: 1px solid $elements-color;
+
+    @include onTablet {
+      padding: 16px;
+    }
+  }
+
+  &Menu {
+    display: none;
+
+    @include onMobile {
+      display: block;
+      border: none;
+      background-color: $white-color;
+      padding: 14px;
+      border-left: 1px solid $elements-color;
+      cursor: pointer;
+    }
+  }
+
+  &Link {
+    position: relative;
+
+    &Active::after {
+      position: absolute;
+      content: '';
+      background-color: $primary-color;
+      height: 3px;
+      width: 100%;
+      top: 11px;
+      right: 0;
+    }
+  }
+}
+
+.counter {
+  position: absolute;
+  top: -36px;
+  right: 12px;
+  background-color: $secondary-accent-color;
+  color: $white-color;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+
+  
+  @include onTablet {
+    top: -25px;
+    right: 8px;
+    font-size: 8px;
+  }
+}

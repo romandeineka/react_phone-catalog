@@ -1,0 +1,64 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.container {
+  @include contentPaddingInline;
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 96px;
+  }
+
+  @include onMobile {
+    padding-inline: 0;
+    margin-bottom: 88px;
+  }
+}
+
+.wrapSlider {
+  @include onMobile {
+    display: none;
+  }
+}
+.wrapSliderMobile {
+  display: none;
+
+  @include onMobile {
+    display: block;
+  }
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 56px;
+  letter-spacing: -0.01em;
+  color: $primary-color;
+  margin-block: 104px 56px;
+
+  @include onTablet {
+    margin-block: 80px 32px;
+  }
+
+  @include onMobile {
+    font-size: 32px;
+    line-height: 41px;
+    @include contentPaddingInline;
+    margin-block: 72px 24px;
+  }
+}
+
+.slider {
+  &Img {
+    width: 90%;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 86%;
+    }
+
+    &Mobile {
+      width: 100%;
+    }
+  }
+}

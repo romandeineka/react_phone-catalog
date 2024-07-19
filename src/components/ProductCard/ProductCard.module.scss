@@ -1,0 +1,114 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.productCard {
+  border: 1px solid $elements-color;
+  border-radius: 8px;
+  padding: 24px;
+  width: 82%;
+  background-color: $white-color;
+  margin: 0 auto;
+  height: 445px;
+
+  @include onTablet {
+    width: 85%;
+  }
+
+  @include onMobile {
+    width: 81%;
+  }
+
+  &Link {
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    // width: 204px;
+    margin: 0 auto;
+  }
+
+  &Img {
+    margin: 0 auto;
+    height: 196px;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &Name {
+    font-weight: 500;
+    line-height: 21px;
+    margin-top: 24px;
+    color: $primary-color;
+    height: 50px;
+    text-align: left;
+    width: 101%;
+    height: 60px;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary-accent-color;
+    }
+  }
+
+  &Price {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 27.8px;
+    margin-bottom: 8px;
+
+    &Old {
+      font-size: 24px;
+      font-weight: 500;
+      color: #89939a;
+      text-decoration: line-through;
+    }
+
+    &Wrap {
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  &Hr {
+    background-color: $elements-color;
+    height: 1px;
+    border: none;
+    margin: 0;
+  }
+
+  &Descr {
+    margin-block: 8px;
+    padding-block: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &Item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &Label {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15.34px;
+      color: $secondary-color;
+    }
+
+    &Value {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15.34px;
+      color: $primary-color;
+    }
+  }
+
+  &Buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

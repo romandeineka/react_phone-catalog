@@ -1,0 +1,100 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.cart {
+  &Content {
+    @include contentPaddingInline;
+  }
+
+  &Back {
+    border-style: none;
+    background-color: $bg-color;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    cursor: pointer;
+    margin-block: 104px 16px;
+    padding: 0;
+
+    @include onMobile {
+      margin-block: 72px 24px;
+    }
+
+    &Title {
+      color: $secondary-color;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15.34px;
+    }
+  }
+
+  &Title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+  }
+
+  &Wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      flex-direction: column;
+      margin-bottom: 64px;
+      gap: 32px;
+    }
+
+    &Items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &Total {
+    height: 206px;
+    width: 30%;
+    border: 1px solid $elements-color;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    &Price {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+      color: $primary-color;
+      padding-top: 24px;
+    }
+
+    &Quantity {
+      position: relative;
+      width: 85%;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      color: $secondary-color;
+      margin-bottom: 49px;
+
+      &::after {
+        position: absolute;
+        content: '';
+        background-color: $elements-color;
+        height: 1px;
+        width: 100%;
+        top: 42px;
+        right: 0;
+      }
+    }
+  }
+}

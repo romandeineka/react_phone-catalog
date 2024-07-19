@@ -1,0 +1,128 @@
+@import '../../utils/variables.scss';
+
+.burgerMenu {
+  &Overlay {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &Content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 640px;
+    height: 100vh;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $elements-color;
+  }
+
+  &Nav {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &List {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  &Item {
+    margin-bottom: 20px;
+  }
+
+  &Link {
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+
+    &:hover {
+      color: #313237;
+      border-bottom: 2px solid #313237;
+    }
+  }
+
+  &Wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  &Bottom {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid $elements-color;
+
+
+    &Link {
+      position: relative;
+      width: 50%;
+      text-align: center;
+      height: 64px;
+      line-height: 64px;
+
+      &:hover {
+        border-bottom: 4px solid #313237;
+      }
+  
+      &Favourites {
+        border-right: 1px solid $elements-color;
+        display: inline-block;
+      }
+    }
+  }
+
+  &Img {
+    
+  }
+
+ 
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  border-left: 1px solid $elements-color;
+}
+
+.logo {
+  padding: 15px 0 13px 16px;
+}
+
+.counter {
+  position: absolute;
+  bottom: 55%;
+  right: 43%;
+  background-color: #476DF4;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 4px 4px;
+  font-size: 9px;
+  width: 6px;
+  height: 6px;
+  line-height: 7px;
+}

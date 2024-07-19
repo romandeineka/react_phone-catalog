@@ -1,0 +1,361 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.product {
+  &Wrap {
+    @include contentPaddingInline;
+  }
+
+  &Back {
+    border-style: none;
+    background-color: $bg-color;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    padding: 0;
+
+    &Title {
+      color: $secondary-color;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 15.34px;
+    }
+  }
+
+  &Title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    margin-bottom: 40px;
+
+    @include onMobile {
+      font-size: 22px;
+      line-height: 30.8px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &Images {
+    display: flex;
+    height: 464px;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      height: auto;
+      margin-bottom: 56px;
+    }
+  }
+
+  &WrapImg {
+    display: flex;
+
+    @include onMobile {
+      flex-direction: column;
+    }
+  }
+
+  &MiniImg {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-right: 16px;
+
+    @include onTablet {
+      gap: 8px;
+    }
+
+    @include onMobile {
+      flex-direction: row;
+      order: 2;
+      margin-right: 0;
+      justify-content: space-around;
+      margin-block:16px 40px;
+    }
+  }
+
+  &Img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 1px solid $primary-color;
+    }
+
+    @include onTablet {
+      width: 35px;
+      height: 35px;
+      border: 1px solid $elements-color;
+      border-radius: 4px;
+    }
+  }
+
+  &MainImg {
+    cursor: pointer;
+    margin-right: 64px;
+    width: 464px;
+    object-fit: contain;
+
+    @include onTablet {
+      height: 287px;
+      width: 287px;
+      margin-right: 17px;
+    }
+
+    @include onMobile {
+      margin: 0 auto;
+      order: 1;
+    }
+  }
+
+  &SelectedImage {
+    border: 1px solid $primary-color;
+  }
+
+  &ShortDescription {
+    width: 30%;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onMobile {
+      width: 100%;
+    }
+  }
+
+  &DescrTitle {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.34px;
+    color: $secondary-color;
+    margin-bottom: 8px;
+  }
+
+  &ColorsWrap {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  &WrapId {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &Colors {
+    display: flex;
+    gap: 8px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      background-color: $elements-color;
+      width: 100%;
+      bottom: -24px;
+    }
+
+    &Item {
+      border-style: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 36px;
+      border: 2px solid $white-color;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $icons-color;
+      }
+    }
+
+    &Selected {
+      border-color: $primary-color;
+    }
+  }
+
+  &CapacityWrap {
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  &Capacity {
+    display: flex;
+    gap: 8px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 1px;
+      background-color: $elements-color;
+      width: 100%;
+      bottom: -24px;
+    }
+
+    &Item {
+      border: 1px solid $icons-color;
+      border-radius: 4px;
+      background-color: $bg-color;
+      height: 32px;
+      width: 60px;
+      padding: 0;
+      cursor: pointer;
+      color: $primary-color;
+      font-size: 14px;
+      font-weight: 600;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+
+    &Selected {
+      background-color: $primary-color;
+      color: $white-color;
+    }
+  }
+
+  &Price {
+    margin-bottom: 16px;
+
+    &New {
+      margin-right: 8px;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 41px;
+      color: $primary-color;
+    }
+
+    &Old {
+      font-size: 24px;
+      font-weight: 500;
+      color: $secondary-color;
+      text-decoration: line-through;
+    }
+
+    &Buttons {
+      display: flex;
+      gap: 8px;
+      margin-block: 16px 32px;
+    }
+  }
+
+  &Char {
+    &Item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &Value {
+      font-size: 12px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
+  &Id {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.34px;
+    color: $icons-color;
+  }
+
+  &Info {
+    display: flex;
+    gap: 64px;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      flex-direction: column;
+      margin-bottom: 64px;
+    }
+
+    @include onMobile {
+      gap: 56px;
+      margin-bottom: 56px;
+    }
+
+    &Title {
+      font-size: 22px;
+      font-weight: 800;
+      color: $primary-color;
+      margin-bottom: 48px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        background-color: $elements-color;
+        width: 100%;
+        bottom: -16px;
+        left: 0;
+      }
+    }
+  }
+
+  &About {
+    width: 50%;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    &Item:not(:last-child) {
+      margin-bottom: 32px;
+    }
+
+    &Title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 25.56px;
+      color: $primary-color;
+      margin-bottom: 16px;
+    }
+
+    &Descr {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      color: $secondary-color;
+    }
+  }
+
+  &TechSpecs {
+    width: 50%;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    &Item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    &Title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 21px;
+      color: $secondary-color;
+    }
+
+    &Value {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 21px;
+      color: $primary-color;
+    }
+  }
+}

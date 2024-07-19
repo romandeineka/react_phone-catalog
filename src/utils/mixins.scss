@@ -1,0 +1,34 @@
+@import '../utils/variables.scss';
+
+@mixin onTablet {
+  @media (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 100px;
+
+  @include onTablet {
+    padding-inline: 24px;
+  }
+
+  @include onMobile {
+    padding-inline: 16px;
+  }
+}
+
+
+// @mixin hover($property, $toValue) {
+//   transition: #{$property} 0.3s;
+//   &:hover {
+//     #{$property}: $toValue;
+//   }
+// }
+

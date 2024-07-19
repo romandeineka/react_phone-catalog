@@ -1,0 +1,29 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss' ;
+
+.slick-arrow {
+  height: 100%;
+  width: 32px;
+  border: 1px solid $icons-color;
+  border-radius: 48px;
+
+  @include onMobile {
+    display: none !important;
+  }
+}
+.slick-prev {
+  left: 0;
+  z-index: 999;
+  &::before {
+    color: $primary-color;
+  }
+}
+.slick-next {
+  right: 0;
+  &::before {
+    color: $primary-color;
+  }
+}
+.slick-dots li button:before {
+  content: '▄▄▄';
+}

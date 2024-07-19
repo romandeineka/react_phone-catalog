@@ -1,0 +1,45 @@
+@import '../../utils/mixins.scss';
+@import '../../utils/variables.scss';
+
+.phoneSlider {
+  @include contentPaddingInline;
+
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onMobile {
+    margin-bottom: 56px;
+  }
+
+  &Title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    color: $primary-color;
+
+    @include onMobile {
+      font-size: 22px;
+      line-height: 30.8px;
+    }
+  }
+
+  &Wrap {
+    width: 95% !important;
+
+    @include onTablet {
+      width: 90% !important;
+    }
+
+    @include onMobile {
+      width: 85% !important;
+    }
+  }
+}
+.phoneCarousel {
+  width: 101.5%;
+}

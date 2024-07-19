@@ -1,0 +1,39 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  &Item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &Title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15.34px;
+    color: $secondary-color;
+  }
+
+  &SelectSort {
+    width: 176px;
+    height: 40px;
+    border: 1px solid $icons-color;
+    border-radius: 8px;
+
+    @include onMobile {
+      width: 136px;
+    }
+  }
+
+  &SelectItems {
+    width: 128px;
+    height: 40px;
+    border: 1px solid $icons-color;
+    border-radius: 8px;
+  }
+}

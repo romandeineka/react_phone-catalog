@@ -1,0 +1,74 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.category {
+  @include contentPaddingInline;
+
+  margin-bottom: 81px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+  }
+
+  @include onMobile {
+    margin-bottom: 56px;
+  }
+
+  &Title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+
+    @include onMobile {
+      font-size: 22px;
+      line-height: 30.8px;
+    }
+  }
+
+  &Wrap {
+    display: flex;
+    gap: 16px;
+    justify-content: space-around;
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &Link {
+    text-decoration: none;
+  }
+
+  &Img {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &Item {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 25.56px;
+    color: $primary-color;
+    margin-bottom: 4px;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &Quantity {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: $secondary-color;
+  }
+}
