@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import './App.scss';
 import Home from './pages/Home/Home';
 import Phones from './pages/Phones/Phones';
@@ -13,7 +15,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import PageNotCreated from './pages/PageNotCreated/PageNotCreated';
 
 export const App = () => (
-  <>
+  <Router basename="/react_phone-catalog">
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
@@ -28,5 +30,5 @@ export const App = () => (
       <Route path="/rights" element={<PageNotCreated />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
-  </>
+  </Router>
 );

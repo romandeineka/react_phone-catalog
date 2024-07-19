@@ -31,13 +31,13 @@ const Phones = () => {
 
   const sortedPhones = sortItems([...phones], sortOrder);
 
+  const firstIndex = (currentPage - 1) * itemsPerPage;
+  const lastIndex = currentPage * itemsPerPage;
+
   const paginatedPhones =
     itemsPerPage === Infinity
       ? sortedPhones
-      : sortedPhones.slice(
-          (currentPage - 1) * itemsPerPage,
-          currentPage * itemsPerPage,
-        );
+      : sortedPhones.slice(firstIndex, lastIndex);
 
   return (
     <div className={styles.product}>

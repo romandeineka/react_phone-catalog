@@ -32,13 +32,13 @@ const Tablets = () => {
 
   const sortedTablets = sortItems([...tablets], sortOrder);
 
+  const firstIndex = (currentPage - 1) * itemsPerPage;
+  const lastIndex = currentPage * itemsPerPage;
+
   const paginatedTablets =
     itemsPerPage === Infinity
       ? sortedTablets
-      : sortedTablets.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage,
-      );
+      : sortedTablets.slice(firstIndex, lastIndex);
 
   return (
     <div className={styles.product}>

@@ -33,13 +33,13 @@ const Accessories = () => {
 
   const sortedAccessories = sortItems([...accessories], sortOrder);
 
+  const firstIndex = (currentPage - 1) * itemsPerPage;
+  const lastIndex = currentPage * itemsPerPage;
+
   const paginatedAccessories =
     itemsPerPage === Infinity
       ? sortedAccessories
-      : sortedAccessories.slice(
-          (currentPage - 1) * itemsPerPage,
-          currentPage * itemsPerPage,
-        );
+      : sortedAccessories.slice(firstIndex, lastIndex);
 
   return (
     <div className={styles.product}>

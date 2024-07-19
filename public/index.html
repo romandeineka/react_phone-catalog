@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Phone catalog</title>
+    <script type="text/javascript">
+      if (location.pathname.startsWith('/react_phone-catalog/')) {
+        location.replace(location.pathname.replace('/react_phone-catalog/', '/') + location.search + location.hash);
+      }
+    </script>
+    
   </head>
   <body>
     <div id="root"></div>
