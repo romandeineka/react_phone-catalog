@@ -26,7 +26,7 @@ const Product = () => {
 
   useEffect(() => {
     setSelectedProduct(product);
-  }, [product]);
+  }, [product, setSelectedProduct]);
 
   useEffect(() => {
     if (selectedProduct) {
@@ -55,7 +55,6 @@ const Product = () => {
         throw new Error(`Unsupported category: ${category}`);
     }
 
-    // Filter products based on the selected color
     const filteredProduct = products.find(
       prod => prod.color.includes(color) && prod.namespaceId.includes(name),
     );
@@ -92,7 +91,6 @@ const Product = () => {
         throw new Error(`Unsupported category: ${category}`);
     }
 
-    // Filter products based on the selected capacity
     const filteredProduct = products.find(
       prod =>
         prod.capacity.includes(capacity) &&
@@ -104,7 +102,6 @@ const Product = () => {
       setSelectedProduct(filteredProduct);
       setSelectedImage(filteredProduct.images[0]);
 
-      // Update URL with new product details
       navigate(`/product/${filteredProduct.id}`, {
         state: { product: filteredProduct },
       });
@@ -131,7 +128,7 @@ const Product = () => {
                     <img
                       key={index}
                       className={`${styles.productImg} ${selectedImage === img ? styles.productSelectedImage : ''}`}
-                      src={`/${img}`}
+                      src={`${process.env.PUBLIC_URL}/${img}`}
                       alt="image"
                       onClick={() => setSelectedImage(img)}
                     />
@@ -140,7 +137,7 @@ const Product = () => {
               </div>
               <img
                 className={styles.productMainImg}
-                src={`/${selectedImage}`}
+                src={`${process.env.PUBLIC_URL}/${selectedImage}`}
                 alt="image"
               />
             </div>
@@ -308,7 +305,6 @@ const Product = () => {
       ) : (
         <div>Product not found</div>
       )}
-      {/* <PhoneSlider title="You may also like" /> */}
       <Footer />
     </div>
   );
