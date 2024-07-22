@@ -1,14 +1,12 @@
 import styles from '../../pages/Phones/Product.module.scss';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-// import PhoneCard from '../../components/PhoneCard/PhoneCard';
 import ToHome from '../../components/ToHome/ToHome';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { useProducts } from '../../AppContext';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Favourites = () => {
-  const { favourites } = useContext(AppContext);
+  const { favourites } = useProducts();
 
   return (
     <div className={styles.product}>

@@ -3,8 +3,8 @@ import Header from '../../components/Header/Header';
 import ToHome from '../../components/ToHome/ToHome';
 import Filters from '../../components/Filters/Filters';
 import Footer from '../../components/Footer/Footer';
-import { AppContext } from '../../AppContext';
-import { useContext, useEffect, useState } from 'react';
+import { useProducts } from '../../AppContext';
+import { useEffect, useState } from 'react';
 import { getPhones } from '../../api/api';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Pagination from '@mui/material/Pagination';
@@ -14,7 +14,7 @@ const Phones = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(Infinity);
   const [sortOrder, setSortOrder] = useState<string>('Newest');
-  const { phones, setPhones, sortItems } = useContext(AppContext);
+  const { phones, setPhones, sortItems } = useProducts();
 
   useEffect(() => {
     getPhones().then(products => {

@@ -4,12 +4,11 @@ import logoIcon from '../../image/Header/logo.svg';
 import closeIcon from '../../image/Header/close.svg';
 import favouritesIcon from '../../image/Header/favourites.svg';
 import shopppingIcon from '../../image/Header/shopping.svg';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { useProducts } from '../../AppContext';
 
 const BurgerMenu = () => {
   const navigate = useNavigate();
-  const { counterFavourites, counterCart } = useContext(AppContext);
+  const { counterFavourites, counterCart } = useProducts();
 
   return (
     <>

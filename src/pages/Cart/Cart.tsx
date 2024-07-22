@@ -5,13 +5,12 @@ import arrowLeft from '../../image/Icon/arrowLeft.svg';
 import CardItem from '../../components/CardItem/CardItem';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { useProducts } from '../../AppContext';
 
 const Cart = () => {
   const navigate = useNavigate();
 
-  const { cart } = useContext(AppContext);
+  const { cart } = useProducts();
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.product.priceDiscount * item.quantity,

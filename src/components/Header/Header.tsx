@@ -4,8 +4,8 @@ import logoIcon from '../../image/Header/logo.svg';
 import favouritesIcon from '../../image/Header/favourites.svg';
 import shopppingIcon from '../../image/Header/shopping.svg';
 import menuIcon from '../../image/Header/menu.svg';
-import { useContext, useEffect } from 'react';
-import { AppContext } from '../../AppContext';
+import { useEffect } from 'react';
+import { useProducts } from '../../AppContext';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Header = () => {
     counterCart,
     setCounterCart,
     cart,
-  } = useContext(AppContext);
+  } = useProducts();
 
   useEffect(() => {
     setCounterFavourites(favourites.length);

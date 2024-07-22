@@ -4,8 +4,8 @@ import ToHome from '../../components/ToHome/ToHome';
 import Filters from '../../components/Filters/Filters';
 // import PhoneCard from '../../components/PhoneCard/PhoneCard';
 import Footer from '../../components/Footer/Footer';
-import { AppContext } from '../../AppContext';
-import React, { useContext, useEffect, useState } from 'react';
+import { useProducts } from '../../AppContext';
+import React, { useEffect, useState } from 'react';
 import { getTablets } from '../../api/api';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Pagination from '@mui/material/Pagination';
@@ -15,7 +15,7 @@ const Tablets = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(Infinity);
   const [sortOrder, setSortOrder] = useState<string>('Newest');
-  const { tablets, setTablets, sortItems } = useContext(AppContext);
+  const { tablets, setTablets, sortItems } = useProducts();
 
   useEffect(() => {
     getTablets().then(products => {

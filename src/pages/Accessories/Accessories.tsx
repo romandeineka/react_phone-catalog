@@ -5,8 +5,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 // import PhoneCard from '../../components/PhoneCard/PhoneCard';
 import ToHome from '../../components/ToHome/ToHome';
-import { useContext, useEffect } from 'react';
-import { AppContext } from '../../AppContext';
+import { useEffect } from 'react';
+import { useProducts } from '../../AppContext';
 import { getAccessories } from '../../api/api';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Pagination from '@mui/material/Pagination';
@@ -16,7 +16,7 @@ const Accessories = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(Infinity);
   const [sortOrder, setSortOrder] = useState<string>('Newest');
-  const { accessories, setAccessories, sortItems } = useContext(AppContext);
+  const { accessories, setAccessories, sortItems } = useProducts();
 
   useEffect(() => {
     getAccessories().then(products => {

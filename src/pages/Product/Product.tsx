@@ -10,12 +10,12 @@ import FavouritesButton from '../../components/FavouritesButton/FavouritesButton
 // import PhoneSlider from '../../components/PhoneSlider/PhoneSlider';
 import Footer from '../../components/Footer/Footer';
 import { Product as ProductType } from '../../types/Product';
-import { useContext, useEffect, useState } from 'react';
-import { AppContext } from '../../AppContext';
+import { useEffect, useState } from 'react';
+import { useProducts } from '../../AppContext';
 import { getAccessories, getPhones, getTablets } from '../../api/api';
 
 const Product = () => {
-  const { selectedProduct, setSelectedProduct } = useContext(AppContext);
+  const { selectedProduct, setSelectedProduct } = useProducts();
   const location = useLocation();
   const navigate = useNavigate();
   const product: ProductType = location.state?.product;

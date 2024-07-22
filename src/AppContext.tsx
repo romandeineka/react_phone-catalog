@@ -1,4 +1,10 @@
-import React, { ReactNode, createContext, useEffect, useState } from 'react';
+import React, {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 import { Product } from './types/Product';
 import { CartItem } from './types/CartItem';
 
@@ -142,3 +148,5 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     </AppContext.Provider>
   );
 };
+
+export const useProducts = () => useContext(AppContext);

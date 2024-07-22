@@ -1,7 +1,6 @@
-import { useContext } from 'react';
 import { Product } from '../../types/Product';
 import styles from './Button.module.scss';
-import { AppContext } from '../../AppContext';
+import { useProducts } from '../../AppContext';
 
 type Props = {
   title: string;
@@ -11,7 +10,7 @@ type Props = {
 };
 
 const Button = ({ title, width, height, product }: Props) => {
-  const { cart, addToCart, removeFromCart } = useContext(AppContext);
+  const { cart, addToCart, removeFromCart } = useProducts();
   const isInCart = cart.some(item => item.product.id === product?.id);
 
   const handleToggleCart = () => {

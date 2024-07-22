@@ -1,8 +1,7 @@
 import styles from './FavouritesButton.module.scss';
 import favouritesIcon from '../../image/ProductCard/favourites.svg';
 import favouritesSelected from '../../image/ProductCard/favoutitesSelected.svg';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
+import { useProducts } from '../../AppContext';
 import { Product } from '../../types/Product';
 
 type Props = {
@@ -12,7 +11,7 @@ type Props = {
 };
 
 const FavouritesButton = ({ width, height, product }: Props) => {
-  const { favourites, setFavourites } = useContext(AppContext);
+  const { favourites, setFavourites } = useProducts();
 
   const addToFavourites = (item: Product) => {
     setFavourites(prevFavourites => [...prevFavourites, item]);

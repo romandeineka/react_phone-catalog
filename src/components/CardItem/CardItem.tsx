@@ -3,15 +3,15 @@ import closeIcon from '../../image/Icon/close.svg';
 import minusIcon from '../../image/Cart/minus.svg';
 import plusIcon from '../../image/Cart/plus.svg';
 import { Product } from '../../types/Product';
-import { useContext } from 'react';
-import { AppContext } from '../../AppContext';
+
+import { useProducts } from '../../AppContext';
 
 type Props = {
   product: Product;
 };
 
 const CardItem = ({ product }: Props) => {
-  const { cart, removeFromCart, updateQuantity } = useContext(AppContext);
+  const { cart, removeFromCart, updateQuantity } = useProducts();
 
   const cartItem = cart.find(item => item.product.id === product.id);
 
